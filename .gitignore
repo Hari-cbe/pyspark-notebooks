@@ -1,4 +1,8 @@
 data/MoviesData/
 data/
-
+data.csv/
 /home/hari/python-notebooks/_spotify_partitioned_data/partitioned_data/
+
+jars/
+
+output_data/
