@@ -93,9 +93,103 @@
 # print(extract_data())
 
 
-string = 'hari     prasth      is  a data engineer'
-lst  = ' '.join([x for x in string.split(' ') if x.isalnum()])
+# string = 'hari     prasth      is  a data engineer'
+# lst  = ' '.join([x for x in string.split(' ') if x.isalnum()])
 
 
-print(lst)
+# print(lst)
+
+# -----Reverse a string with in-built function 
+# 
+# string = 'raman'
+# def reverse_string(s : str) -> str:
+#     reversed_str = '' 
+#     for i in s:
+#         reversed_str = i + reversed_str
+#     return reversed_str
+
+# reverse_string(string)
+
+# -----generators
+
+# def fibo(n):
+#     lst = []
+#     x, y = 0,1 
+#     for i in range(n):
+#         lst.append(x)
+#         x,y = y,x+y
+#     return lst 
+
+# fibo(4)
+
+# def fibo(n):
+#     x, y = 0,1 
+#     for i in range(n):
+#         yield x
+#         x,y = y,x+y
+
+# [i for i in fibo(4)]
+
+
+# Infosys vantha sutan sethan repeatu Recur Syndrome
+# def recur_syndrome(n):
+#     n = n
+#     while True:
+#         print(n)
+#         reversed_n = str(n)[::-1]
+
+#         sumed = n + int(reversed_n)
+#         if str(sumed) == str(sumed)[::-1]:
+#             return sumed 
+#         else:
+#             n = sumed
+
+# print(recur_syndrome(97))
+
+# Infosys find the first sum of 2 == 10 
+
+import time
+
+lst = [1,4,7,8,1,14,6,18]
+
+start = time.time()
+
+n = len(lst)
+i = 0
+
+while i < n-1:
+    # print(i, i+1)
+    if lst[i] + lst[i+1] == 10:
+        print(lst[i], lst[i+1])
+        break 
+    i += 1
+else:
+    print("there is no occurance")
+
+print(f"time taken {time.time() - start}")
+
+
+def checktime(func):
+    
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(result)
+        print(f" time taken {end_time - start_time}")
+        return result
+    return wrapper
+
+@checktime
+def find_sum(lst):
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i] + lst[j] == 10:
+                return (lst[i],lst[j])
+    else:
+        return "There is no occurance"
+
+    
+find_sum(lst)
+    
 
