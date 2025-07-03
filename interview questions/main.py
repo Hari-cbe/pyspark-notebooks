@@ -148,48 +148,105 @@
 
 # Infosys find the first sum of 2 == 10 
 
-import time
+# import time
 
-lst = [1,4,7,8,1,14,6,18]
+# lst = [1,4,7,8,1,14,6,18]
 
-start = time.time()
+# start = time.time()
 
-n = len(lst)
-i = 0
+# n = len(lst)
+# i = 0
 
-while i < n-1:
-    # print(i, i+1)
-    if lst[i] + lst[i+1] == 10:
-        print(lst[i], lst[i+1])
-        break 
-    i += 1
-else:
-    print("there is no occurance")
+# while i < n-1:
+#     # print(i, i+1)
+#     if lst[i] + lst[i+1] == 10:
+#         print(lst[i], lst[i+1])
+#         break 
+#     i += 1
+# else:
+#     print("there is no occurance")
 
-print(f"time taken {time.time() - start}")
+# print(f"time taken {time.time() - start}")
 
 
-def checktime(func):
+# def checktime(func):
     
-    def wrapper(*args, **kwargs):
-        start_time = time.time()
-        result = func(*args, **kwargs)
-        end_time = time.time()
-        print(result)
-        print(f" time taken {end_time - start_time}")
-        return result
-    return wrapper
+#     def wrapper(*args, **kwargs):
+#         start_time = time.time()
+#         result = func(*args, **kwargs)
+#         end_time = time.time()
+#         print(result)
+#         print(f" time taken {end_time - start_time}")
+#         return result
+#     return wrapper
 
-@checktime
-def find_sum(lst):
-    for i in range(len(lst)):
-        for j in range(i+1, len(lst)):
-            if lst[i] + lst[j] == 10:
-                return (lst[i],lst[j])
-    else:
-        return "There is no occurance"
+# @checktime
+# def find_sum(lst):
+#     for i in range(len(lst)):
+#         for j in range(i+1, len(lst)):
+#             if lst[i] + lst[j] == 10:
+#                 return (lst[i],lst[j])
+#     else:
+#         return "There is no occurance"
 
     
-find_sum(lst)
-    
+# find_sum(lst)
 
+# Write a program that handles division by zero using try-except.
+
+''' 
+    What is the difference between if and try exception is -> both are control flow statements
+    but try catch - handles the exception
+'''
+
+# n = 10
+# try:
+#     n / 5 // 3 - 4 ( 5)
+# except ZeroDivisionError:
+#     print(" Divide BY ZERO !!")
+# except Exception as e :
+#     print(f"the exception is {e}")
+# finally:
+#     print("This block will be executed---- finally")
+    
+# Given a string, count how many vowels it has.
+
+# string = "Given a string, count how many vowels it has"
+
+# print(sum([1 for i in string.lower() if i in ['a','e','i','o','u']]))
+
+# count = 0
+
+# for i in string.lower():
+#     if i in ['a','e','i','o','u']:
+#         count += 1
+# print(count)
+
+
+
+# Reverse a list without using built-in functions.
+
+# lst = [1,2,3,4,5]
+
+# print(sorted(lst,reverse=True))
+
+# lst = [1,2,3,4,5]
+# rev_lst = []
+# n = len(lst)
+# print(n)
+# for index,i in enumerate(range(n-1,-1,-1)):
+#     poped_char = lst.pop(i)
+#     rev_lst.append(poped_char)
+
+# print(rev_lst)
+
+# lst = ["sql","scala","pyTHon","javA","java","pyspark"]
+
+# rev_lst = []
+
+# for i in range(len(lst)-1,-1,-1):
+#     poped = lst.pop(i).lower()
+#     if poped not in rev_lst:
+#         rev_lst.append(poped)
+
+# print([x[0].upper() + x[1:].lower() for x in rev_lst])
